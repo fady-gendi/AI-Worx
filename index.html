@@ -498,10 +498,10 @@ body.hm #view,body.hm #view.wrap{max-width:none;padding:0;margin:0}
 .h7l{display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1.6vh,20px);min-width:0;overflow:auto}
 .h7sh{margin:0;font:700 16px var(--f-d);letter-spacing:.14em;padding:0 0 6px 12px;border-bottom:1px solid #111;position:relative;width:100%}
 .h7sh:before{content:"";position:absolute;left:0;top:-8px;bottom:-8px;border-left:1px solid #111}
-.h7l h1{display:block;margin:0;line-height:1.06;font-size:clamp(24px,min(3.4vw,6.4vh),66px);letter-spacing:0}
+.h7l h1{display:block;margin:0;line-height:1.06;font-size:clamp(22px,min(3vw,5.2vh),56px);letter-spacing:0}
 .h7l h1 span{font-weight:300;text-transform:uppercase;margin-right:.28em}.h7l h1 b{font-weight:800;text-transform:uppercase}.h7l h1 b:after{content:"";display:block}
-.h7l .lead{margin:0;color:#444;font-size:clamp(13px,2vh,18px);max-width:64ch}
-.h7tr>div{display:grid;grid-template-columns:clamp(130px,13vw,190px) 1fr;gap:14px;padding:clamp(6px,1.5vh,16px) 0 clamp(6px,1.5vh,16px) 12px;border-bottom:1px solid #d6d6d6}
+.h7l .lead{margin:0;color:#444;font-size:clamp(13px,1.8vh,17px);max-width:64ch}
+.h7tr>div{display:grid;grid-template-columns:clamp(130px,13vw,190px) 1fr;gap:14px;padding:clamp(5px,1.1vh,13px) 0 clamp(5px,1.1vh,13px) 12px;border-bottom:1px solid #d6d6d6}
 .h7tr h5{margin:0;font:600 clamp(12.5px,1.8vh,15px) var(--f-d)}.h7tr p{margin:0;color:#555;font-size:clamp(12px,1.7vh,15px)}
 .h7btn{padding:11px 20px;background:#111;color:#fff;font:600 13px var(--f-d);border:1px solid #111;display:inline-block;text-decoration:none;transition:.15s;cursor:pointer}.h7btn:hover{background:#fff;color:#111}.h7btn.g{background:#fff;color:#111}.h7btn.g:hover{background:#111;color:#fff}.h7btn.s{padding:7px 14px;font-size:12px}
 .h7cta{display:flex;gap:10px;flex-wrap:wrap}
@@ -541,6 +541,13 @@ body.hm #view,body.hm #view.wrap{max-width:none;padding:0;margin:0}
 .frame.max iframe{left:0!important;top:0!important;box-shadow:none!important}
 .acts{gap:8px}.acts button{flex:1 1 calc(50% - 8px)}
 @media (max-width:860px){body.devp .p-app .fstage{height:calc(100dvh - 56px);min-height:520px}}
+body.hm .bar{display:none}
+.h7{grid-template-rows:auto minmax(0,1fr) auto;height:100vh;height:100dvh}
+.h7nm{font-size:clamp(28px,min(4vw,6.4vh),64px);line-height:1;text-transform:uppercase;letter-spacing:.01em;padding:clamp(10px,2vh,22px) clamp(16px,3vw,40px) clamp(10px,1.6vh,18px);border-bottom:1px solid #111;position:relative}
+.h7nm span{font-weight:300}.h7nm b{font-weight:800}
+.h7nm:after{content:"";position:absolute;right:0;top:0;width:46px;height:100%;background:#111}
+@media (max-width:900px),(max-height:620px){.h7nm{font-size:clamp(28px,9vw,44px)}.h7nm:after{width:24px}}
+@media (min-width:901px) and (max-height:760px){.h7cta{display:none}}
 
 .cvwrap{container-type:inline-size;container-name:cv}
 .cvx{--ink:#111;--g:#6f6f6f;--ln:#111;background:#fff;color:var(--ink);font:400 13px/1.55 "Poppins","Segoe UI",system-ui,sans-serif;position:relative;padding:44px 34px 36px 40px;overflow:hidden}
@@ -645,7 +652,7 @@ function card(p,cls){return '<a class="mc" href="#/projects/'+p.id+'" style="--c
 var CVH=window.__CVH,CVFILE=window.__CVFILE,TR=[["Program leadership", "Runs operations and delivery for an in-house AI programme of over 250 tools, and leads the team of Product Owners."], ["Operational excellence", "12+ years as a senior project and operations manager. PMP, PMI-ACP, PMI-SP and SAFe 6 certified."], ["Delivery", "30+ large-scale projects delivered in Automotive, IT and Construction, plus eight working apps built alongside."]];
 function tile(p){return '<a class="h7t" href="#/projects/'+p.id+'" style="--c:'+p.accent+'"><div class="th"><img src="'+p.thumb+'" alt=""></div><b>'+esc(p.name)+'</b><span>'+esc(p.kind)+'</span></a>'}
 function home(){
- return '<div class="h7"><div class="h7top">'+'<div class="h7l"><h2 class="h7sh">Career objective.</h2><h1><span>Bring</span><b>innovation.</b><span>Deliver</span><b>change.</b><span>Lead</span><b>transformation.</b></h1><p class="lead">To bring innovation into how organisations plan and deliver, turn change into results people can feel, and lead transformation from the first idea until it runs on its own.</p><h2 class="h7sh">Track record.</h2><div class="h7tr">'+TR.map(function(t){return '<div><h5>'+t[0]+'</h5><p>'+t[1]+'</p></div>'}).join('')+'</div><div class="h7cta"><a class="h7btn" href="#/projects/life">Open a project</a><a class="h7btn g" href="mailto:fady.gendi@gmail.com?subject=Let%27s%20connect">Let\'s connect</a></div></div>'+'<aside class="h7cv" id="cv"><div class="h7cvbar"><b>Curriculum vitae</b><a class="h7btn s" href="mailto:fady.gendi@gmail.com?subject=Let%27s%20connect">Let\'s connect</a><a class="h7btn s g" href="#" id="dl">Download CV</a></div><div class="h7cvs"><div class="cvwrap">'+CVH+'</div></div></aside>'+'</div><nav class="h7dock" id="dock" aria-label="Projects">'+P.map(tile).join('')+'</nav></div>'}
+ return '<div class="h7"><div class="h7nm"><span>Fady</span> <b>Gendi</b></div><div class="h7top">'+'<div class="h7l"><h2 class="h7sh">Career objective.</h2><h1><span>Bring</span><b>innovation.</b><span>Deliver</span><b>change.</b><span>Lead</span><b>transformation.</b></h1><p class="lead">To bring innovation into how organisations plan and deliver, turn change into results people can feel, and lead transformation from the first idea until it runs on its own.</p><h2 class="h7sh">Track record.</h2><div class="h7tr">'+TR.map(function(t){return '<div><h5>'+t[0]+'</h5><p>'+t[1]+'</p></div>'}).join('')+'</div><div class="h7cta"><a class="h7btn" href="#/projects/life">Open a project</a><a class="h7btn g" href="mailto:fady.gendi@gmail.com?subject=Let%27s%20connect">Let\'s connect</a></div></div>'+'<aside class="h7cv" id="cv"><div class="h7cvbar"><b>Curriculum vitae</b><a class="h7btn s" href="mailto:fady.gendi@gmail.com?subject=Let%27s%20connect">Let\'s connect</a><a class="h7btn s g" href="#" id="dl">Download CV</a></div><div class="h7cvs"><div class="cvwrap">'+CVH+'</div></div></aside>'+'</div><nav class="h7dock" id="dock" aria-label="Projects">'+P.map(tile).join('')+'</nav></div>'}
 function wireHome(){var d=$('#dl');if(d)d.onclick=function(e){e.preventDefault();var b=new Blob([CVFILE],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Fady_Gendi_CV.html';document.body.appendChild(a);a.click();a.remove()}}
 function projects(){
  return '<header style="padding-block:44px 8px"><div class="eyebrow">Projects</div><h1 style="font-size:clamp(34px,5vw,60px);margin-top:12px">Things Fady has built</h1><p style="color:var(--mute);max-width:60ch;margin:14px 0 26px;font-size:18px">Open a project to see the problem it solves and the working app, then its features and the architecture behind it.</p></header><ul class="pgrid">'+P.map(function(p){return '<li>'+card(p)+'</li>'}).join('')+'</ul><div style="height:48px"></div>'}
